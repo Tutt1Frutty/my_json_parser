@@ -1,0 +1,38 @@
+/// json
+/// Author: Maksym Zhersh AM-3
+///
+/// json.pest
+
+/// Whitespaces
+WHITESPACE = _{ " " | "\t" | "\r" | "\n" }
+
+/// Top-level JSON rule
+json = { SOI ~ value ~ EOI }
+
+/// Different value types (string, number, object, array, boolean, null)
+value = _{ object | array | string | number | boolean | null }
+
+/// Rule for a JSON object (key-value pairs inside braces)
+object = { "{" ~ (pair ~ ("," ~ pair)*)? ~ "}" }
+
+/// A pair consists of a key (string) and a value (any valid JSON value)
+pair = { string ~ ":" ~ value }
+
+/// JSON array
+array = { "[" ~ (value ~ ("," ~ value)*)? ~ "]" }
+
+/// String rule
+string = @{ "\"" ~ (!"\"" ~ ANY)* ~ "\"" }
+
+/// Number rule
+number = @{ "-"? ~ ("0" | nonzero_digit ~ digit*) ~ ("." ~ digit+)? }
+
+/// Rules for individual digits and non-zero digits
+digit = { '0'..'9' }
+nonzero_digit = { '1'..'9' }
+
+/// Boolean rule (true or false)
+boolean = { "true" | "false" }
+
+/// Null rule
+null = { "null" }

@@ -1,0 +1,30 @@
+{
+  "name": "zhersh_json_parser",
+  "version": "1.0",
+  "is_active": true,
+  "metadata": {
+    "description": "This is a sample JSON file to test the JSON parser project.",
+    "authors": [
+      {
+        "name": "Maksym",
+        "role": "developer"
+      },
+      {
+        "name": "Zhersh",
+        "role": "designer"
+      }
+    ],
+    "repository": "https://github.com/Tutt1Frutty/json_parser_upd.git"
+  },
+  "data": [14, 3.14, null, true, "parser"],
+  "settings": {
+    "resolution": "1920x1080",
+    "fullscreen": false,
+    "volume": 0.58
+  },
+  "features": [
+    "parsing",
+    "validation",
+    "error handling"
+  ]
+}
