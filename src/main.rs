@@ -11,7 +11,7 @@ fn print_help() {
 fn print_credits() {
     println!("JSON Parser Project");
     println!("Author: Maksym Zhersh (AM-3)");
-    println!("Repository: https://github.com/Tutt1Frutty/json_parser_upd.git");
+    println!("Repository: https://github.com/Tutt1Frutty/my_json_parser.git");
 }
 
 fn main() {

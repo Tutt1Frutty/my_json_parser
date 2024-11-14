@@ -62,7 +62,7 @@ Output:
 ```
 JSON Parser Project
 Author: Maksym Zhersh (AM-3)
-Repository: https://github.com/Tutt1Frutty/json_parser_upd.git
+Repository: https://github.com/Tutt1Frutty/my_json_parser.git
 ```
 
 ## JSON grammar

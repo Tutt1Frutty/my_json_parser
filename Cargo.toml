@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 description = "A CLI JSON parser with customizable error handling and a rule-based parsing system"
 license = "MIT"
-repository = "https://github.com/Tutt1Frutty/json_parser_upd.git"
+repository = "https://github.com/Tutt1Frutty/my_json_parser.git"
 documentation = "https://docs.rs/zhersh_json_parser"
 
 [dependencies]
