@@ -1,4 +1,6 @@
 # Zhersh JSON Parser
+Docs.rs:https://docs.rs/crate/zhersh_json_parser/latest
+Crates.io:https://crates.io/crates/zhersh_json_parser
 
 ## Overview
 Zhersh JSON Parser is a simple command-line JSON parser written in Rust. It validates JSON files based on a custom grammar and outputs the file content if the structure is correct.
