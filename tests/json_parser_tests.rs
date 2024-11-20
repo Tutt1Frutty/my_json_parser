@@ -1,5 +1,5 @@
 use anyhow::Result;
-use zhersh_json_parser::{parse_object, validate_json};
+use my_json_parser_proj::{parse_object, validate_json};
 
 #[test]
 fn test_valid_json_object() -> Result<()> {
@@ -39,6 +39,33 @@ fn test_invalid_json_structure() {
 #[test]
 fn test_json_boolean_and_null() -> Result<()> {
     let input = r#"{"key": true, "another_key": null}"#;
+    validate_json(input)?;
+    Ok(())
+}
+
+#[test]
+fn test_exponential_number_positive() -> Result<()> {
+    let input = r#"1.23e+10"#;
+    validate_json(input)?;
+    Ok(())
+}
+
+#[test]
+fn test_exponential_number_negative() -> Result<()> {
+    let input = r#"-5e-2"#;
+    validate_json(input)?;
+    Ok(())
+}
+
+#[test]
+fn test_invalid_exponential_number() {
+    let input = r#"123e"#; // Missing exponent value
+    assert!(validate_json(input).is_err());
+}
+
+#[test]
+fn test_valid_iso_date() -> Result<()> {
+    let input = r#""2023-11-20T14:32:00Z""#;
     validate_json(input)?;
     Ok(())
 }

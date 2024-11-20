@@ -1,9 +1,9 @@
+use my_json_parser_proj::{validate_json, JsonParseError};
 use std::{env, fs, process};
-use zhersh_json_parser::{validate_json, JsonParseError};
 
 fn print_help() {
     println!("Usage:");
-    println!("  cargo run -- zhersh_json.json   Parses the specified JSON file.");
+    println!("  cargo run -- my_json.json   Parses the specified JSON file.");
     println!("  cargo run -- --help        Displays this help information.");
     println!("  cargo run -- --credits     Shows credits for this project.");
 }

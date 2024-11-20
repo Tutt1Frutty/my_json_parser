@@ -1,6 +1,6 @@
 [package]
-name = "zhersh_json_parser"
-version = "0.1.0"
+name = "my_json_parser_proj"
+version = "0.1.1"
 edition = "2021"
 description = "A CLI JSON parser with customizable error handling and a rule-based parsing system"
 license = "MIT"

@@ -25,14 +25,38 @@ array = { "[" ~ (value ~ ("," ~ value)*)? ~ "]" }
 string = @{ "\"" ~ (!"\"" ~ ANY)* ~ "\"" }
 
 /// Number rule
-number = @{ "-"? ~ ("0" | nonzero_digit ~ digit*) ~ ("." ~ digit+)? }
+number = @{ "-"? ~ ("0" | nonzero_digit ~ digit*) ~ ("." ~ digit+)? ~ (exponent)? }
 
-/// Rules for individual digits and non-zero digits
-digit = { '0'..'9' }
-nonzero_digit = { '1'..'9' }
+/// Exponent rule
+exponent = { ("e" | "E") ~ ("+" | "-")? ~ digit+ }
 
 /// Boolean rule (true or false)
 boolean = { "true" | "false" }
 
 /// Null rule
 null = { "null" }
+
+/// Rules for individual digits and non-zero digits
+digit = { '0'..'9' }
+nonzero_digit = { '1'..'9' }
+
+/// Date in ISO 8601 format rule
+date = @{ year ~ "-" ~ month ~ "-" ~ day ~ "T" ~ hour ~ ":" ~ minute ~ ":" ~ second ~ "Z" }
+
+/// Year rule
+year = { digit{4} }
+
+/// Month rule
+month = { '0'..'0' ~ ('1'..'9') | '1'..'1' ~ ('0'..'2') }
+
+/// Day rule
+day = { '0'..'2' ~ digit | '3'..'3' ~ ('0'..'1') }
+
+/// Hour rule
+hour = { '0'..'1' ~ digit | '2'..'2' ~ ('0'..'3') }
+
+/// Minute rule
+minute = { digit{2} }
+
+/// Second rule
+second = { digit{2} }
